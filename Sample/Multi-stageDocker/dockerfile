@@ -1,8 +1,0 @@
-FROM openjdk:17-jdk 
-LABEL Author="Prachi Patil"
-RUN apt update && apt upgrade -y
-RUN wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-RUN echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
-RUN apt update && install jenkins -y
-CMD [ "java","-jar","/usr/share/jenkins/jenkins.war"]
-EXPOSE 8080
