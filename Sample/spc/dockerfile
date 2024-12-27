@@ -1,0 +1,7 @@
+FROM cimg/openjdk:17.0
+LABEL Author="Prachi Patil"
+RUN curl -O "https://pet-clinic-bucket.s3.ap-south-1.amazonaws.com/spring-petclinic-3.2.0-SNAPSHOT.jar"
+EXPOSE 8080
+CMD [ "java","-jar","spring-petclinic-3.2.0-SNAPSHOT.jar"]
+
+# Using ADD Instructions
